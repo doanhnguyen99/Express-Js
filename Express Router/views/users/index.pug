@@ -1,7 +1,7 @@
 h1 User
 a(href="/users/create") Add User
 
-form(action="/users/search" method="GET")
+form(action="/users/search" method="GET" id="input-field")
     input(type="text" name="q")
     button Search
 ul
@@ -9,11 +9,11 @@ ul
         li= user.name
         a(href='/users/' + user.id) View
 
-//- script.
-//-     var searchInput = document.getElementById('input-field');
-//-     var value = searchInput.value;
-//-     //- console.log(value);
-//-     searchInput.addEventListener('change', function() {
-//-     sessionStorage.setItem('draft', searchInput.value)
-//-     })
-//-     searchInput.value = sessionStorage.getItem('draft');
+script.
+    var searchInput = document.getElementById('input-field');
+    var value = searchInput.value;
+    //- console.log(value);
+    searchInput.addEventListener('change', function() {
+    sessionStorage.setItem('draft', searchInput.value)
+    })
+    searchInput.value = sessionStorage.getItem('draft');
