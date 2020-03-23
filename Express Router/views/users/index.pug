@@ -1,19 +1,21 @@
-h1 User
-a(href="/users/create") Add User
+extends ../layouts/common
+block content
+        h1 User
+        a(href="/users/create") Add User
 
-form(action="/users/search" method="GET" id="input-field")
-    input(type="text" name="q")
-    button Search
-ul
-    each user in users
-        li= user.name
-        a(href='/users/' + user.id) View
+        form(action="/users/search" method="GET" class="d-flex")
+            input(type="text" name="q" class="form-control")
+            button(class="btn btn-primary") Search
+        ul
+            each user in users
+                li= user.name
+                a(href='/users/' + user.id) View
 
-script.
-    var searchInput = document.getElementById('input-field');
-    var value = searchInput.value;
-    //- console.log(value);
-    searchInput.addEventListener('change', function() {
-    sessionStorage.setItem('draft', searchInput.value)
-    })
-    searchInput.value = sessionStorage.getItem('draft');
+//- script.
+//-     var searchInput = document.getElementById('input-field');
+//-     var value = searchInput.value;
+//-     //- console.log(value);
+//-     searchInput.addEventListener('change', function() {
+//-     sessionStorage.setItem('draft', searchInput.value)
+//-     })
+//-     searchInput.value = sessionStorage.getItem('draft');
