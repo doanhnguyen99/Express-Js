@@ -5,8 +5,9 @@ var controller = require('../controllers/user.controller');
 var shortid = require('shortid')
 var router = express.Router();
 
-router.get('/', controller.index);
+router.get('/home', controller.home);
 
+router.get('/', controller.index);
 
 // Search
 router.get('/search', controller.search);

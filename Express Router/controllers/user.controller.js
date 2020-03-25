@@ -1,6 +1,9 @@
 var db = require('../db');
 var shortid = require('shortid');
 
+module.exports.home = function(req, res){
+    res.render('./index');
+};
 
 module.exports.index = function(req, res){
     res.render('users/index', {
@@ -21,6 +24,7 @@ module.exports.search = function(req, res){
 
 module.exports.create = function(req, res){
     res.render('users/create')
+    // res.render('./index');
 };
 
 module.exports.get = function(req, res){
