@@ -1,3 +1,21 @@
-//- h1 Hello #{name}
-h1 Doanh Nguyễn
-a(href="/users") User-List
+extends ./layouts/common
+block css
+    link(rel="stylesheet", href="/css/custom.css")
+block content    
+    <ul class="nav nav-tabs header">
+        <li class="nav-item">
+        img(src="/image/logo.png", alt="logo")
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+    </ul>
